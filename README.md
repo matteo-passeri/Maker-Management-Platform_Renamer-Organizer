@@ -1,5 +1,5 @@
-Maker-Management-Platform (MMP): 
-Renamer-Organizer (Ex. for Thingiverse)
+# 3D Models Renamer-Organizer (Ex. for Thingiverse)
+## for Maker-Management-Platform (MMP)
 
 ---
 
@@ -8,6 +8,6 @@ Sites (like Thingiverse) has the downloaded models in a structure folders tree, 
 
 It also improve the name of the folder:
  - Capitalize every first letter of a word
- - Replace with a space, symbols as: '+_+', '_', '+', '-'
+ - Replace with a space, symbols as: '+\_+', '\_', '+', '-'
  - Remove, at the end of the name folder, words as: 'stls', 'model Files', 'print Files'
  - Remove spaces at the beginning or a the end of the name folder
