@@ -3,7 +3,6 @@ import shutil
 
 
 FOLDERS_TO_FIX = os.path.join(os.getcwd(), 'FoldersToFix')
-FIXED_FOLDERS = os.path.join(os.getcwd(), 'FixedFolders')
 print('Folders to Fix:', FOLDERS_TO_FIX)
 
 # for each folder in the current directory,
@@ -40,11 +39,9 @@ for folder in os.listdir(FOLDERS_TO_FIX):
 
                 print("Deleted ", dirpath)
         
-        print("folder: ", folder)
         # if the folder name contains '+_+', replace it with ' - ';
         new_folder = folder.replace('+_+', ' - ')
-        print("new_folder: ", new_folder)
-        # temporally replace ' - ' with a symbol that is rarely been use; to be able to distinguish "-" from " - ";
+        # temporally replace ' - ' with a symbol that is rarely use; to be able to distinguish "-" from " - ";
         new_folder = new_folder.replace(' - ', ' § ')        
         new_folder = new_folder.replace('-', ' ')
         new_folder = new_folder.replace(' § ', ' - ')
@@ -55,8 +52,8 @@ for folder in os.listdir(FOLDERS_TO_FIX):
             new_folder = new_folder[:-4]
         # capitalize the first letter of each word;
         new_folder = ' '.join([word.capitalize() for word in new_folder.split()])
-        # if the folder name ends with 'model Files', remove it;
-        if new_folder.endswith('model Files'):
+        # if the folder name ends with 'model Files' or 'print Files', remove it;
+        if new_folder.endswith(('model Files', 'print Files')):
             new_folder = new_folder[:-11]
         # if the folder name ends with a space, remove it;
         if new_folder.endswith(' '):
@@ -64,11 +61,9 @@ for folder in os.listdir(FOLDERS_TO_FIX):
         # if the folder name starts with a space, remove it;
         if new_folder.startswith(' '):
             new_folder = new_folder[1:]
-            
-        print("new_folder: ", new_folder)
 
         # rename the folder, if the folder already exists, add a number to the end;
-        new_folder_path = os.path.join(FIXED_FOLDERS, new_folder)
+        new_folder_path = os.path.join(FOLDERS_TO_FIX, new_folder)
         if (folder_path != new_folder_path) & (os.path.exists(new_folder_path)):
             i = 1
             while os.path.exists(new_folder_path + ' ' + str(i)):
