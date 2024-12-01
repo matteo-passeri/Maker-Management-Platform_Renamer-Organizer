@@ -7,6 +7,7 @@ Sites (like Thingiverse) has the downloaded models in a structure folders tree, 
 (I use it for every downloaded model to just rename the folders too)
 
 It also improve the name of the folder:
+ - Remove the ID at the end, if present (including the ' - ' prefix)
  - Capitalize every first letter of a word
  - Replace with a space, symbols as: '+\_+', '\_', '+', '-'
  - Remove, at the end of the name folder, words as: 'stls', 'model Files', 'print Files'
